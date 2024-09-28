@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package distance1;
+
+option go_package = "distanceCalculator/distance1";
+
+service DistanceCalculatorService {
+  rpc GetDistance(DistanceRequest) returns (DistanceResponse) {}
+}
+
+message DistanceRequest {
+  string from_address = 1;
+  string to_address = 2;
+}
+
+message DistanceResponse {
+  double distance = 1;
+}
